@@ -1,0 +1,12 @@
+
+<% @boards.each do |x| %>
+	<% if current_user.email == "admin@admin.com" %>
+	<p><%= x.email %></p>
+	<p><%= x.content %></p>
+	<% end %>
+<% end %>
+
+<form action="/home/write" method="post">
+	방명록 : <textarea name="content"></textarea>
+	<input type="submit" value="쓰기">
+</form>
